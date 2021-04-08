@@ -1,6 +1,6 @@
 # Country-Quiz
 
-##play here
+##play here https://phoiv.github.io/Country-Quiz/
 
 
 *gets data with fetch api from https://restcountries.eu/
