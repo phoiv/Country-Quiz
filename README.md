@@ -3,7 +3,8 @@
 ##play here https://phoiv.github.io/Country-Quiz/
 
 
-*gets data with fetch api from https://restcountries.eu/
+
+*gets data with fetch api from https://restcountries.eu/ <--- its dead :/
 
 *correct answers give 5 points, wrong answers -2, find all countries to go the next round
 
