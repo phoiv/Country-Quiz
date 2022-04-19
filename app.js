@@ -2,9 +2,10 @@
 
 // returns Promise of country data
 function getCountryData(countryCode) {
+
     return new Promise((resolve, reject) => {
 
-        get = fetch(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
+        get = fetch(`https://restcountries.com/v2/alpha/${countryCode}`)
             .then(resp => {
                 if (resp.status == 200) {
                     return resp.json();
@@ -12,6 +13,13 @@ function getCountryData(countryCode) {
                 else reject(new Error(resp.status));
             })
             .then(data => {
+                if(data.hasOwnProperty('borders')){
+                    console.log('yes')
+                }
+                else {
+                    data['borders'] = [];
+                }
+
                 resolve(data)
             })
             .catch(error => console.log(error))
@@ -64,7 +72,6 @@ class Game {
         this.updateScoreDisplay()
         this.settingNewRound()
     }
-
 
     settingNewRound() {
         console.log("NEW ROUND STARTING...FETCHING NEW COUNTRY...")
